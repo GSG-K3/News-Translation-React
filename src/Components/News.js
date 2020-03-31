@@ -26,8 +26,8 @@ class News extends Component {
       <div>
         {this.state.lists.map((item, i) => {
           return (
-            <ul>
-              <li key={i}>
+            <ul key={i}>
+              <li>
                 <h1>{item.title}</h1>
                 <p>{item.description}</p>
                 <button>translate</button>
