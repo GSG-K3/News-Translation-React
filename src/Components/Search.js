@@ -3,10 +3,10 @@ import React, { Component } from "react";
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = { countryCode: "au" };
+    this.state = { countryCode: "au", articles: [] };
   }
 
-  // when user selects a certian country from the list save it's value in state 
+  // when user selects a certian country from the list save it's value in state
   handleChange = (event) => {
     this.setState({ countryCode: event.target.value });
   };
@@ -14,6 +14,17 @@ class Search extends Component {
   // when user submit the form we will fetch news based on the country code in state
   handleSubmit = (event) => {
     event.preventDefault();
+    const { countryCode } = this.state;
+    const newsAPI = `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=626633f093cd40b7bda4ca1a94cc2b89`;
+    fetch(newsAPI)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        this.setState({ articles: data.articles });
+      })
+
+      .catch((err) => console.log(err));
+
     console.log("country code is: ", this.state.countryCode);
   };
 
