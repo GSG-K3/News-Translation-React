@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = { countryCode: "au", articles: [] };
+    this.state = { countryCode: "au" };
   }
 
   // when user selects a certian country from the list save it's value in state
@@ -19,13 +19,10 @@ class Search extends Component {
     fetch(newsAPI)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        this.setState({ articles: data.articles });
+        this.props.displayArticles(data.articles);
       })
 
       .catch((err) => console.log(err));
-
-    console.log("country code is: ", this.state.countryCode);
   };
 
   render() {
