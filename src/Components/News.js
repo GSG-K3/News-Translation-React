@@ -1,12 +1,8 @@
 import React, { Component } from "react";
+import Translate from "./Translated";
 
 class News extends Component {
-
-
-
-
   render() {
-    
     return (
       <div>
         {this.props.articles.map((item, i) => {
@@ -15,7 +11,8 @@ class News extends Component {
               <li>
                 <h1>{item.title}</h1>
                 <p>{item.description}</p>
-                <button>translate</button>
+
+                <Translate title={item.title} description={item.description} />
               </li>
             </ul>
           );
