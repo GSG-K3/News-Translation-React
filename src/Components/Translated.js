@@ -15,7 +15,7 @@ class Translated extends Component {
     const { title, description } = this.props;
     const TranslateAPI =
       "https://translate.yandex.net/api/v1.5/tr.json/translate" +
-      "?key=trnsl.1.1.20200204T203412Z.4c3799296843dd33.06f6e271e121e6ebd8428ff4fbab8ad1e1fa3a32" +
+      "?key=trnsl.1.1.20200401T144220Z.0f5a7e60e0520271.c100038ccb2f3285d494e2e05cee085529cbc5a4" +
       "&text=" +
       title +
       "&text=" +
