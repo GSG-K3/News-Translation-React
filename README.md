@@ -33,4 +33,5 @@ As a user should be able press on the translate button to get instant translatio
 
 <h3>Team</h3>
 - [Rahaf](https://github.com/Rahaf-96)
+
 - [Tasneem](https://github.com/tasneembhiri)
