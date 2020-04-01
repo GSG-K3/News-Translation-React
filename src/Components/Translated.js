@@ -5,11 +5,14 @@ class Translated extends Component {
     super(props);
     this.state = {
       title: "",
-      description: ""
+      description: "",
+      isLoading: false
     };
   }
 
   handleTranslate = () => {
+
+    this.setState({ isLoading: true });
     const { title, description } = this.props;
     const TranslateAPI =
       "https://translate.yandex.net/api/v1.5/tr.json/translate" +
@@ -24,7 +27,8 @@ class Translated extends Component {
       .then((res) => {
         this.setState({
           title: res.text[0],
-          description: res.text[1]
+          description: res.text[1],
+          isLoading:false
         });
       })
 
@@ -32,6 +36,9 @@ class Translated extends Component {
   };
 
   render() {
+    if (this.state.isLoading) {
+        return <p>Translation is Loading ...</p>;
+      }
     // if the news not in arabic then display translate button
     const hasArabic = /[\u0600-\u06FF]/;
     if (

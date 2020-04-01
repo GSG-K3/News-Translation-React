@@ -5,13 +5,12 @@ class News extends Component {
   render() {
     return (
       <div>
-        {this.props.articles.map((item, i) => {
+        {this.props.articles.map((item) => {
           return (
-            <ul key={i}>
-              <li>
+            <ul >
+              <li key={item.toString()}>
                 <h1>{item.title}</h1>
                 <p>{item.description}</p>
-
                 <Translate title={item.title} description={item.description} />
               </li>
             </ul>
