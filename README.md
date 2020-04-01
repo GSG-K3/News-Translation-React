@@ -33,6 +33,17 @@ $ npm start
    - index.js
    - App.css
 ```
+## References
+
+| Name  | Reference     |
+| ------------- |:-------------:|
+| News API        | https://newsapi.org/docs|
+| Translate API       | https://tech.yandex.com/translate/doc/dg/concepts/about-docpage/ |
+| Slideshow    | https://reactjsexample.com/a-react-component-for-image-slideshow-supporting-slide/|
+| Illustrations        | https://undraw.co/illustrations|
+
+
+
 
 # Team
 
