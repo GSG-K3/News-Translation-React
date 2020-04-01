@@ -3,10 +3,10 @@
 <p>News Translation Website displays World News and translate it from any language to arabic</p>
 
 # User journy
-- As a user should be able choose any country he wants from a drop-down list.<br>
-- As a user should be able press on the search button and get all the news.<br>
-- As a user should be able see the news displayed on the screen with titles and descriptions.<br>
-- As a user should be able press on the translate button to get instant translation to Arabic language. 
+- As a user I should be able choose any country he wants from a drop-down list.<br>
+- As a user I should be able press on the search button and get all the news.<br>
+- As a user I should be able see the news displayed on the screen with titles and descriptions.<br>
+- As a user I should be able press on the translate button to get instant translation to Arabic language. 
 
 # Setup
 - Clone this repo to your local machine using:
