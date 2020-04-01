@@ -27,6 +27,10 @@ class Search extends Component {
       })
 
       .catch((err) => console.log(err));
+    window.scrollTo({
+      top: 1000,
+      behavior: "smooth"
+    });
   };
 
   render() {
