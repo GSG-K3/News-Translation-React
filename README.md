@@ -33,7 +33,7 @@ $ npm start
    - index.js
    - App.css
 ```
-## References
+# References
 
 | Name  | Reference     |
 | ------------- |:-------------:|
