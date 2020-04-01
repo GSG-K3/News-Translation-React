@@ -11,7 +11,6 @@ class Translated extends Component {
   }
 
   handleTranslate = () => {
-
     this.setState({ isLoading: true });
     const { title, description } = this.props;
     const TranslateAPI =
@@ -28,7 +27,7 @@ class Translated extends Component {
         this.setState({
           title: res.text[0],
           description: res.text[1],
-          isLoading:false
+          isLoading: false
         });
       })
 
@@ -37,8 +36,8 @@ class Translated extends Component {
 
   render() {
     if (this.state.isLoading) {
-        return <p>Translation is Loading ...</p>;
-      }
+      return <p>Translation is Loading ...</p>;
+    }
     // if the news not in arabic then display translate button
     const hasArabic = /[\u0600-\u06FF]/;
     if (
@@ -47,9 +46,11 @@ class Translated extends Component {
     ) {
       return (
         <div>
-          <button onClick={this.handleTranslate}>Translate to Arabic</button>
-          <h2>{this.state.title}</h2>
-          <p>{this.state.description}</p>
+          <button onClick={this.handleTranslate} className="translate-btn">
+            Translate to Arabic
+          </button>
+          <h2 className="translation-title">{this.state.title}</h2>
+          <p className="translation-description">{this.state.description}</p>
         </div>
       );
     } else {
