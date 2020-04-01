@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = { countryCode: "au" };
+    this.state = { countryCode: "" };
   }
 
   // when user selects a certian country from the list save it's value in state
@@ -15,6 +15,10 @@ class Search extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { countryCode } = this.state;
+    if (!countryCode) {
+      alert("you should select a country");
+      return;
+    }
     const newsAPI = `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=626633f093cd40b7bda4ca1a94cc2b89`;
     fetch(newsAPI)
       .then((res) => res.json())
@@ -36,7 +40,10 @@ class Search extends Component {
             value={this.state.countryCode}
             onChange={this.handleChange}
           >
-            ><option value="au">Australia</option>
+            <option disabled value="">
+              choose a country
+            </option>
+            <option value="au">Australia</option>
             <option value="ca">Canada</option>
             <option value="cn">China</option>
             <option value="eg">Egypt</option>

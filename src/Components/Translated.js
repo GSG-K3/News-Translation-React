@@ -10,9 +10,7 @@ class Translated extends Component {
   }
 
   handleTranslate = () => {
-    console.log(this.props);
     const { title, description } = this.props;
-
     const TranslateAPI =
       "https://translate.yandex.net/api/v1.5/tr.json/translate" +
       "?key=trnsl.1.1.20200204T203412Z.4c3799296843dd33.06f6e271e121e6ebd8428ff4fbab8ad1e1fa3a32" +
@@ -34,6 +32,7 @@ class Translated extends Component {
   };
 
   render() {
+    // if the news not in arabic then display translate button
     const hasArabic = /[\u0600-\u06FF]/;
     if (
       !hasArabic.test(this.props.title) &&
