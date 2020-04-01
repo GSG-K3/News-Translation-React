@@ -15,10 +15,10 @@ class News extends Component {
     return (
       <div className="slide-container">
         <Slide {...properties}>
-          {this.props.articles.map((item) => {
+          {this.props.articles.map((item,i) => {
             return (
-              <ul className="news-list">
-                <li key={item.toString()} className="news-item">
+              <ul key={i} className="news-list">
+                <li  className="news-item">
                   <h1 className="news-title">{item.title}</h1>
                   <p className="news-description">{item.description}</p>
                   <Translate
