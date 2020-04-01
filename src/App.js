@@ -10,12 +10,14 @@ class App extends Component {
   }
 
   displayArticles = (articles) => {
+
     this.setState({
       articles
     });
   };
 
   componentDidMount() {
+    
     this.setState({ isLoading: true });
 
     const newsAPI =
@@ -24,6 +26,7 @@ class App extends Component {
       .then((res) => res.json())
 
       .then((res) => {
+        console.log(res)
         this.setState({ articles: res.articles, isLoading: false });
       })
 

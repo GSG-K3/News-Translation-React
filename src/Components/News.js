@@ -5,19 +5,17 @@ class News extends Component {
   render() {
     return (
       <div>
-        <ul>
         {this.props.articles.map((item) => {
           return (
-            
-              <li key={item.id}>
+            <ul >
+              <li key={item.toString()}>
                 <h1>{item.title}</h1>
                 <p>{item.description}</p>
                 <Translate title={item.title} description={item.description} />
               </li>
-            
+            </ul>
           );
         })}
-        </ul>
       </div>
     );
   }
